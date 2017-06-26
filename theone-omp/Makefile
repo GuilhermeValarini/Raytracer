@@ -7,7 +7,7 @@ FLAGS=-fopenmp -Wno-unused-result
 
 RM=rm -f
 
-HEADER="Resolution,Width,Height,Number_spheres,Run_time"
+HEADER="Filename,Resolution,Width,Height,Number_spheres,Run_time"
 RESFILE=results.csv
 
 all:

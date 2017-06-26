@@ -399,11 +399,12 @@ int main(int argc, char **argv)
     save(argv[2], image, width, height);
 
     std::cout << std::fixed << std::setprecision(4);
-    std::cout << height << ", ";
-    std::cout << width << ", ";
-    std::cout << height << ", ";
-    std::cout << s << ", ";
-    std::cout << runTime/1000.0 << '\n';
+    std::cout << argv[1] << ",";
+    std::cout << height << ",";
+    std::cout << width << ",";
+    std::cout << height << ",";
+    std::cout << s << ",";
+    std::cout << runTime << '\n';
 
 	delete image;
     delete spheres;

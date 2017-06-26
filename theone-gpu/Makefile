@@ -7,14 +7,14 @@ FLAGS=-g -G -gencode arch=compute_50,code=sm_50
 
 RM=rm -f
 
-HEADER="Resolution,Width,Height,Number_spheres,Run_time"
+HEADER="Filename,Resolution,Width,Height,Number_spheres,Run_time"
 RESFILE=results.csv
 
 all:
 	$(CXX) $(FLAGS) $(EXEC).cu -o $(EXEC)
 
 clean:
-	$(RM) $(EXEC) *.ppm
+	$(RM) $(EXEC) *.ppm *.csv
 
 exec:clean all run
 
