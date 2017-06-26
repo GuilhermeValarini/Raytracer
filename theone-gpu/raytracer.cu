@@ -386,9 +386,16 @@ int main(int argc, char **argv)
     }
     Vec3f *image = new Vec3f[width * height];
 
-    double runTime = rtclock();
+    cudaEvent_t start, stop;
+    float runTime;
+    cudaEventCreate(&start);
+
+    cudaEventRecord(start,0);
     render(image, width, height, spheres, s+l);
-    runTime = rtclock() - runTime;
+    cudaEventCreate(&stop);
+    cudaEventRecord(stop,0);
+    cudaEventSynchronize(stop);
+    cudaEventElapsedTime(&runTime, start,stop);
 
     save(argv[2], image, width, height);
 
@@ -398,7 +405,7 @@ int main(int argc, char **argv)
     std::cout << height << ", ";
     std::cout << s << ", ";
     std::cout << MAX_RAY_DEPTH << ", ";
-    std::cout << runTime << '\n';
+    std::cout << runTime/1000.0 << '\n';
 
 	delete image;
     delete spheres;
