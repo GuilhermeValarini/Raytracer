@@ -124,7 +124,9 @@ public:
 //[comment]
 // This variable controls the maximum recursion depth
 //[/comment]
-#define MAX_RAY_DEPTH 5
+#ifndef MAX_RAY_DEPTH
+#define MAX_RAY_DEPTH 10
+#endif
 
 float mix(const float &a, const float &b, const float &mix)
 {

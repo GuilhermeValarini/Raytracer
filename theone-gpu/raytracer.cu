@@ -174,7 +174,9 @@ public:
 //[comment]
 // This variable controls the maximum recursion depth
 //[/comment]
+#ifndef MAX_RAY_DEPTH
 #define MAX_RAY_DEPTH 10
+#endif
 
 __device__ float mix(const float &a, const float &b, const float &mix)
 {

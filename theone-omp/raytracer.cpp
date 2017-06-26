@@ -125,7 +125,9 @@ public:
 //[comment]
 // This variable controls the maximum recursion depth
 //[/comment]
-#define MAX_RAY_DEPTH 5
+#ifndef MAX_RAY_DEPTH
+#define MAX_RAY_DEPTH 10
+#endif
 
 float mix(const float &a, const float &b, const float &mix)
 {
@@ -323,7 +325,7 @@ int main(int argc, char **argv)
     double runTime = rtclock();
     render(image, width, height, spheres, s+l);
     runTime = rtclock() - runTime;
-    std::cout << "Run time: " << runTime << '\n';
+    std::cout << "Run time" << runTime << '\n';
 
     save(argv[2], image, width, height);
 
