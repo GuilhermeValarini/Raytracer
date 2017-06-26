@@ -30,6 +30,7 @@
 #include <cstring>
 #include <sys/time.h>
 #include <omp.h>
+#include <iomanip>
 
 #if defined __linux__ || defined __APPLE__
 // "Compiled for Linux
@@ -325,9 +326,16 @@ int main(int argc, char **argv)
     double runTime = rtclock();
     render(image, width, height, spheres, s+l);
     runTime = rtclock() - runTime;
-    std::cout << "Run time" << runTime << '\n';
 
     save(argv[2], image, width, height);
+
+    std::cout << std::setprecision(4);
+    std::cout << height << ", ";
+    std::cout << width << ", ";
+    std::cout << height << ", ";
+    std::cout << s << ", ";
+    std::cout << MAX_RAY_DEPTH << ", ";
+    std::cout << runTime << '\n';
 
 	delete image;
 
