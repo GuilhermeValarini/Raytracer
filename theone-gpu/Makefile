@@ -7,7 +7,7 @@ FLAGS=-g -G -gencode arch=compute_50,code=sm_50
 
 RM=rm -f
 
-HEADER="Resolution, Width, Height, Number spheres, Maximum depth, Run time"
+HEADER="Resolution,Width,Height,Number_spheres,Run_time"
 RESFILE=results.csv
 
 all:

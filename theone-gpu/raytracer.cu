@@ -403,7 +403,6 @@ int main(int argc, char **argv)
     std::cout << width << ", ";
     std::cout << height << ", ";
     std::cout << s << ", ";
-    std::cout << MAX_RAY_DEPTH << ", ";
     std::cout << runTime/1000.0 << '\n';
 
 	delete image;
