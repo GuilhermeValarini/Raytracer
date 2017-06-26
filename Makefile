@@ -1,7 +1,6 @@
-$(MAKE)= make
-$(RM)=rm
-$(PYTHON)=python
-
+MAKE= make
+RM=rm
+PYTHON=python
 
 all:
 	echo "Compiling on CPU with no parallel code"
