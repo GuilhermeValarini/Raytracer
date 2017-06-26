@@ -395,6 +395,7 @@ int main(int argc, char **argv)
     cudaEventRecord(stop,0);
     cudaEventSynchronize(stop);
     cudaEventElapsedTime(&runTime, start,stop);
+    runTime /= 1000.0;
 
     save(argv[2], image, width, height);
 
