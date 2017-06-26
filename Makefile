@@ -1,5 +1,7 @@
 $(MAKE)= make
 $(RM)=rm
+$(PYTHON)=python
+
 
 all:
 	echo "Compiling on CPU with no parallel code"
@@ -16,7 +18,7 @@ run:
 	$(MAKE) -C theone-omp run
 	echo "Running on GPU"
 	$(MAKE) -C theone-gpu run
-
+	$(PYTHON) makeOutput.py
 
 clean:
 	echo "Cleanning all images and compiled files"
