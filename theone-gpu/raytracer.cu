@@ -40,7 +40,7 @@
 #endif
 
 #ifndef TILE_WIDTH
-#define TILE_WIDTH 8
+#define TILE_WIDTH 32
 #endif
 
 double rtclock()
