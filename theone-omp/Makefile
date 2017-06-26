@@ -23,7 +23,7 @@ clean:
 	for file in $(OUTPUT); do $(RM) $$file; done
 
 rm_res:
-$(RM) $(RESFILE)
+	$(RM) $(RESFILE)
 
 exec:clean rm_res all
 	echo $(HEADER) >> $(RESFILE)
