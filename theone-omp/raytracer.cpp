@@ -70,7 +70,7 @@ public:
     Vec3<T> operator * (const T &f) const { return Vec3<T>(x * f, y * f, z * f); }
     Vec3<T> operator * (const Vec3<T> &v) const { return Vec3<T>(x * v.x, y * v.y, z * v.z); }
     T dot(const Vec3<T> &v) const { return x * v.x + y * v.y + z * v.z; }
-    Vec3<T> operator - (const Vec3<T> &v) const {------------ return Vec3<T>(x - v.x, y - v.y, z - v.z); }
+    Vec3<T> operator - (const Vec3<T> &v) const { return Vec3<T>(x - v.x, y - v.y, z - v.z); }
     Vec3<T> operator + (const Vec3<T> &v) const { return Vec3<T>(x + v.x, y + v.y, z + v.z); }
     Vec3<T>& operator += (const Vec3<T> &v) { x += v.x, y += v.y, z += v.z; return *this; }
     Vec3<T>& operator *= (const Vec3<T> &v) { x *= v.x, y *= v.y, z *= v.z; return *this; }
@@ -85,7 +85,7 @@ public:
 };
 
 typedef Vec3<float> Vec3f;
-typedef Vec3<float> RGB;------------
+typedef Vec3<float> RGB;
 
 class Sphere
 {
@@ -97,7 +97,7 @@ public:
     Sphere(
         const Vec3f &c,
         const float &r,
-        const Vec3f &sc,------------
+        const Vec3f &sc,
         const float &refl = 0,
         const float &transp = 0,
         const Vec3f &ec = 0) :
