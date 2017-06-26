@@ -1,38 +1,24 @@
 EXEC=raytracer
-INPUT=$(sort $(wildcard *.in))
-OUTPUT=$(wildcard *.ppm)
+INPUT=$(abspath $(sort $(wildcard ../input/*.in)))
+OUTPUT=$(basename $(notdir $(INPUT)))
 
 CXX=g++
-FLAGS=-O3 -fopenmp -Wno-unused-result
+FLAGS=-fopenmp -Wno-unused-result
 
 RM=rm -f
-
-GEN=gen_scene
-PI=python
 
 HEADER="Resolution, Width, Height, Number spheres, Maximum depth, Run time"
 RESFILE=results.csv
 
-all: $(EXEC)
-
-$(EXEC):
+all:
 	$(CXX) $(FLAGS) $(EXEC).cpp -o $(EXEC)
 
 clean:
-	$(RM) $(EXEC)
-	for file in $(OUTPUT); do $(RM) $$file; done
+	$(RM) $(EXEC) *.ppm
 
-rm_res:
+exec:clean all run
+
+run:
 	$(RM) $(RESFILE)
-
-exec:clean rm_res all
 	echo $(HEADER) >> $(RESFILE)
-	for file in $(INPUT); do echo Testing $$file; ./$(EXEC) $$file "$${file%%.*}.ppm" >> $(RESFILE); done
-
-rm_test:
-	for file in $(INPUT); do $(RM) $$file; done
-
-gen_test:
-	$(PI) $(GEN).py
-
-new_test: rm_test gen_test
+	for file in $(INPUT); do y=$${file%.in}; x=$${y##*/}; echo Testing $$x.in; ./$(EXEC) $$file $$x.ppm >> $(RESFILE); done
