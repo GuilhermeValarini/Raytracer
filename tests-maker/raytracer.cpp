@@ -329,7 +329,7 @@ int main(int argc, char **argv)
 
     save(argv[2], image, width, height);
 
-    std::cout << std::setprecision(4);
+    std::cout << std::fixed << std::setprecision(4);
     std::cout << height << ", ";
     std::cout << width << ", ";
     std::cout << height << ", ";
