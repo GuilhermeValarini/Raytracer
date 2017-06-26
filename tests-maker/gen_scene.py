@@ -4,7 +4,7 @@ from datetime import datetime
 random.seed(datetime.now())
 
 sceneResName = ["0_hd", "1_full_hd", "2_4k", "3_8k"]
-sceneRes = [[1366, 768], [1920, 1080], [3840, 2160], [7680, 4320]]
+sceneRes = [[1280, 720], [1920, 1080], [3840, 2160], [7680, 4320]]
 positionBorder = [[-10, 10], [-5, 5], [-100, -20]]
 radiusBorder = [0, 3]
 colorBorder= [[0, 1], [0, 1], [0, 1]]
@@ -41,5 +41,5 @@ def create(spheres):
     for scene, sphere in zip(range(len(spheres)), spheres):
         createScene(sphere, scene)
 
-numSpheres = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+numSpheres = [10, 40, 70, 100]
 create(numSpheres)
