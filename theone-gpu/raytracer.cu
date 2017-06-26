@@ -279,7 +279,6 @@ __global__ void trace(
                 rayorig = phit + nhit * bias;
                 raydir = refldir;
                 depth++;
-                continue;
             }
             else {
                 // it's a diffuse object, no need to raytrace any further
