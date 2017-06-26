@@ -19,10 +19,13 @@ $(EXEC):
 	$(CXX) $(FLAGS) $(EXEC).cu -o $(EXEC)
 
 clean:
-	$(RM) $(EXEC) $(RESFILE)
+	$(RM) $(EXEC)
 	for file in $(OUTPUT); do $(RM) $$file; done
 
-exec:clean all
+rm_res:
+$(RM) $(RESFILE)
+
+exec:clean rm_res all
 	echo $(HEADER) >> $(RESFILE)
 	for file in $(INPUT); do echo Testing $$file; ./$(EXEC) $$file "$${file%%.*}.ppm" >> $(RESFILE); done
 
