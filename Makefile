@@ -7,3 +7,9 @@ exec:
 	$(MAKE) -C theone-omp exec
 	echo "Running on GPU"
 	$(MAKE) -C theone-gpu exec
+
+clean:
+	echo "Cleanning all images and compiled files"
+	$(MAKE) -C theone-cpu clean
+	$(MAKE) -C theone-omp clean
+	$(MAKE) -C theone-gpu clean
